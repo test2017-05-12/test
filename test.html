@@ -3,14 +3,17 @@
     <body>
 
         <style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
+	    .embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #1E1E1E;
 		font-family: "FiraSansRegular", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+	    }
+	    .embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #1E1E1E;
-	}
-</style>
+	    }
+	    div:has(> select.Language), label[for=Language], select.Language {
+		display: none;
+            }
+        </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
