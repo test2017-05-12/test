@@ -10,7 +10,10 @@
 	    .embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #1E1E1E;
 	    }
-	    div:has(> select.Language), label[for=Language], select.Language, div:has(> select.Protagonist__c), label[for=Protagonist__c], select.Protagonist__c {
+	    div:has(> select.Language), label[for=Language], select.Language {
+		display: none;
+            }
+	    div:has(> select.Protagonist__c), label[for=Protagonist__c], select.Protagonist__c {
 		display: none;
             }
         </style>
