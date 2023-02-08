@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <body>
-
 <style type='text/css'>
     .embeddedServiceHelpButton .helpButton .uiButton {
         background-color: #005290;
@@ -20,51 +16,47 @@
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-var initESW = function(gslbBaseURL) {
-    embedded_svc.settings.displayHelpButton = true; // or false
-    embedded_svc.settings.language = ''; // for example, enter 'en' or 'en-US'
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-    // sets the auto-population of pre-chat form fields
-    embedded_svc.settings.prepopulatedPrechatFields = {
-        FirstName: "First1",
-        LastName: "Last1",
-        Email: "f1@1.1",
-        Subject: "Test 1",
-        Language: "en",
-        Protagonist: "merchant"
+        // sets the auto-population of pre-chat form fields
+        embedded_svc.settings.prepopulatedPrechatFields = {
+            FirstName: "First1",
+            LastName: "Last1",
+            Email: "f1@1.1",
+            Language: "en",
+            Protagonist: "merchant"
+        };
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+        embedded_svc.init(
+            'https://billie--pavdev.sandbox.my.salesforce.com',
+            'https://billie--pavdev.sandbox.my.salesforce-sites.com/',
+            gslbBaseURL,
+            '00DMT0000008aOf',
+            'BuyerPortalChat',
+            {
+                baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+                deploymentId: '5721n000000gHk1',
+                buttonId: '5731n000000LG9s',
+                baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1n000000TNToEAO_1862ca1595a',
+                isOfflineSupportEnabled: false
+            }
+        );
     };
 
-    embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-    embedded_svc.settings.entryFeature = 'LiveAgent';
-
-    embedded_svc.init(
-        'https://billie--pavdev.sandbox.my.salesforce.com',
-        'https://billie--pavdev.sandbox.my.salesforce-sites.com/',
-        gslbBaseURL,
-        '00D1l0000000sLA',
-        'DashboardChat',
-        {
-            baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
-            deploymentId: '5721n000000gHk1',
-            buttonId: '5731n000000LG9s',
-            baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
-            eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1n000000TNTYEA4_18627c9e148',
-            isOfflineSupportEnabled: false
-        }
-    );
-};
-
-if (!window.embedded_svc) {
-    var s = document.createElement('script');
-    s.setAttribute('src', 'https://billie--pavdev.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-    s.onload = function() {
-        initESW(null);
-    };
-    document.body.appendChild(s);
-} else {
-    initESW('https://service.force.com');
-}
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://billie--pavdev.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
 </script>
-
-    </body>
-</html>
